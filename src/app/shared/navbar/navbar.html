@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    @for (link of links; track $index) {
+      <li 
+          [class.active]="activeTab() === link.path"
+          (click)="setActive(link.path)">
+        <a [routerLink]="link.path">
+          <i class="icon {{ link.icon }}"></i>
+          {{ link.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
