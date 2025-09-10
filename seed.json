@@ -6,7 +6,18 @@
     { "id": 5001, "accountId": 101, "policyNo": "PL-2025-0001", "lob": "Property", "premium": 12500, "status": "Active", "effective": "2025-09-01", "expiration": "2026-08-31" }
   ],
   "workQueue": [
-    { "id": 1, "type": "Submission Review", "priority": "High", "account": "Acme GmbH", "due": "2025-09-10" }
+    { "id": 1, "originator": "Alice", "client": "Acme GmbH", "line": "Cyber Liability", "type": "Submission Review", "status": "New", "created": "2025-09-10" },
+    { "id": 2, "originator": "Bob", "client": "Beta Corp", "line": "Marine Cargo", "type": "Document Approval", "status": "Pending Review", "created": "2025-09-12" },
+    { "id": 3, "originator": "Charlie", "client": "Gamma Ltd", "line": "Environmental", "type": "Risk Assessment", "status": "Completed", "created": "2025-09-15" },
+    { "id": 4, "originator": "Diana", "client": "Delta Inc", "line": "Cyber Liability", "type": "Submission Review", "status": "New", "created": "2025-09-11" },
+    { "id": 5, "originator": "Ethan", "client": "Epsilon Co", "line": "Product Liability", "type": "Compliance Check", "status": "Pending Review", "created": "2025-09-14" },
+    { "id": 6, "originator": "Fiona", "client": "Zeta LLC", "line": "D&O Liability", "type": "Document Approval", "status": "Completed", "created": "2025-09-16" },
+    { "id": 7, "originator": "George", "client": "Eta GmbH", "line": "Environmental", "type": "Risk Assessment", "status": "New", "created": "2025-09-13" },
+    { "id": 8, "originator": "Hannah", "client": "Theta Ltd", "line": "Marine Cargo", "type": "Submission Review", "status": "Pending Review", "created": "2025-09-17" },
+    { "id": 9, "originator": "Ian", "client": "Iota Corp", "line": "Cyber Liability", "type": "Compliance Check", "status": "Completed", "created": "2025-09-18" },
+    { "id": 10, "originator": "Julia", "client": "Kappa Inc", "line": "Marine Cargo", "type": "Document Approval", "status": "New", "created": "2025-09-19" },
+    { "id": 11, "originator": "Kevin", "client": "Lambda LLC", "line": "Product Liability", "type": "Risk Assessment", "status": "Pending Review", "created": "2025-09-20" },
+    { "id": 12, "originator": "Laura", "client": "Mu GmbH", "line": "Medical Malpractise", "type": "Submission Review", "status": "Completed", "created": "2025-09-21" }
   ],
   "news": [
     { "id": 1, "title": "Reinsurance rates trend up", "source": "MarketWatch", "publishedAt": "2025-08-31T10:00:00Z" }

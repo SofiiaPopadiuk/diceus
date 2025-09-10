@@ -1,0 +1,49 @@
+<app-card>
+  <div class="title">Work Queue</div>
+
+  <div class="tabs">
+    @for (tab of tabs(); track $index) {
+      <button
+        [class.active]="activeTab() === tab.name"
+        (click)="setActiveTab(tab.name)"
+      >
+        {{ tab.name }} ({{ tab.count }})
+      </button>
+    }
+  </div>
+  
+  <table class="work-queue-table">
+    <thead>
+      <tr>
+        <th>Originator</th>
+        <th>Client/Line</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of filteredItems(); track $index; let index = $index) {
+        <!-- !== 0 because index starts from 0 -->
+        <tr class="row" [class.even]="index % 2 !== 0">
+          <td class="originator">{{ item.originator }}</td>
+          <td class="client-line">
+            <span class="client">{{ item.client }}</span>
+            <span class="line">{{ item.line }}</span>
+          </td>
+          <td>{{ item.type }}</td>
+          <td>
+            <i
+              class="fa fa-circle circle mr-1"
+              [ngStyle]="{ color: item.status | statusColor: 'color' }"
+            ></i>
+            <span>{{ item.status }}</span>
+          </td>
+          <td>{{ item.created }}</td>
+          <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</app-card>
