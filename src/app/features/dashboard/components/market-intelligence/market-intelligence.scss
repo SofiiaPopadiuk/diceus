@@ -1,0 +1,19 @@
+.market-intelligence {
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    display: flex;
+    border-bottom: 1px solid #293245;
+    padding: 8px 0;
+
+    .circle {
+      font-size: 14px;
+      margin-right: 8px;
+      margin-top: -2px;
+    }
+  }
+}
