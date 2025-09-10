@@ -1,0 +1,91 @@
+<app-card class="portfolio-goals">
+  <div class="portfolio-goals__title">Portfolio goals</div>
+
+  <!-- Loss Ratio -->
+  <div class="goal-colorful">
+    <div class="goal-colorful__header">PORTFOLIO LOSS RATIO TARGET</div>
+    <div class="goal-colorful__target" >
+      <div class="value" [style.left.%]="lossRatio()?.target">
+        TG: {{ lossRatio()?.target + '%' }}
+      </div>
+    </div>
+  
+    <div class="bar">
+      @for (range of portfolioGoalsRanges(); track $index) {
+        <div class="bar__segment"
+          [style.flex]="range.max - range.min"
+          [style.background]="range.color">
+        </div>
+      }
+  
+      <div class="bar__marker" [style.left.%]="lossRatio()?.value">
+        {{ lossRatio()?.value }}%
+      </div>
+    </div>
+  
+    <div class="goal-colorful__status" [style.color]="getLossRatioStatusColor(lossRatio()?.status)" [style.left.%]="lossRatio()?.value">
+      {{ lossRatio()?.delta }}% ({{ lossRatio()?.status }})
+    </div>
+  </div>
+
+  <!-- Renewal Retention -->
+  <div class="goal-colorful">
+    <div class="goal-colorful__header">RENEWAL RETENTION</div>
+    <div class="goal-colorful__target" >
+      <div class="value" [style.left.%]="(renewalRetention()?.targetMax + renewalRetention()?.targetMin)/2">
+        TG: {{ renewalRetention()?.targetMin + '-' + renewalRetention()?.targetMax + '%' }}
+      </div>
+    </div>
+  
+    <div class="bar">
+      @for (range of renewalRetentionRanges(); track $index) {
+        <div class="bar__segment"
+          [style.flex]="range.max - range.min"
+          [style.background]="range.color">
+        </div>
+      }
+  
+      <div class="bar__marker" [style.left.%]="renewalRetention()?.value">
+        {{ renewalRetention()?.value }}%
+      </div>
+    </div>
+  
+    <div class="goal-colorful__status" [style.color]="getRenewalRetentioStatusColor(renewalRetention()?.status)" [style.left.%]="renewalRetention()?.value">
+      {{ renewalRetention()?.status }}
+    </div>
+  </div>
+
+  <!-- New Business -->
+  <div class="goal">
+    <div class="goal__header">NEW BUSINESS TARGET</div>
+  
+    <div class="goal__progress-container">
+      <div class="goal__progress-bar">
+        <div class="goal__progress-fill" [style.width.%]="newBusiness()?.percent"></div>
+        <div class="goal__value" [style.left.%]="newBusiness()?.percent">${{ newBusiness()?.value }}M</div>
+      </div>
+      <div class="goal__target">${{ newBusiness()?.target }}M</div>
+    </div>
+  
+    <div class="goal__percent-container">
+      <div class="goal__percent" [style.left.%]="newBusiness()?.percent">{{ newBusiness()?.percent }}%</div>
+    </div>
+  </div>
+
+  <!-- Annual GWP -->
+  <div class="goal">
+    <div class="goal__header">ANNUAL GWP TARGET</div>
+  
+    <div class="goal__progress-container">
+      <div class="goal__progress-bar">
+        <div class="goal__progress-fill" [style.width.%]="annualGWP()?.percent"></div>
+        <div class="goal__value" [style.left.%]="annualGWP()?.percent">${{ annualGWP()?.value }}M</div>
+      </div>
+      <div class="goal__target">${{ annualGWP()?.target }}M</div>
+    </div>
+  
+    <div class="goal__percent-container">
+      <div class="goal__percent" [style.left.%]="annualGWP()?.percent">{{ annualGWP()?.percent }}%</div>
+    </div>
+  </div>
+</app-card>

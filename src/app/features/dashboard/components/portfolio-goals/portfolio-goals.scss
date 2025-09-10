@@ -1,0 +1,126 @@
+.portfolio-goals {
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .goal-colorful {
+    position: relative;
+    margin-bottom: 2rem;
+
+    &__header {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: #b3b9bd;
+      text-align: start;
+    }
+  
+    &__label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+  
+    &__target {
+      position: relative;
+      display: block;
+      height: 14px;
+      font-size: 10px;
+      color: #a0a8b8;
+
+      .value {
+        position: absolute;
+        color: #aaa;
+        transform: translateX(-50%);
+        width: max-content;
+      }
+    }
+  
+    &__status {
+      position: absolute;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      transform: translateX(-50%);
+    }
+  }
+  
+  .bar {
+    position: relative;
+    display: flex;
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    &__segment {
+      height: 100%;
+    }
+  
+    &__marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+  
+  .goal {
+    margin-bottom: 2rem;
+  
+    &__header {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: #b3b9bd;
+      text-align: start;
+    }
+  
+    &__progress-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    &__progress-bar {
+      display: block;
+      width: 85%;
+      position: relative;
+      height: 24px;
+      background: #2b3245;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+  
+    &__progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#313853 0%, #3b82f6 100%);
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  
+    &__value {
+      position: absolute;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      padding-right: 12px;
+      font-size: 0.9rem;
+    }
+  
+    &__percent-container {
+      width: 85%;
+      position: relative;
+      line-height: 0.9;
+    }
+  
+    &__percent {
+      position: absolute;
+      margin-top: 4px;
+      font-size: 10px;
+      color: #a0a8b8;
+      transform: translateX(-100%);
+    }  
+  }
+}

@@ -21,5 +21,24 @@
   ],
   "news": [
     { "id": 1, "title": "Reinsurance rates trend up", "source": "MarketWatch", "publishedAt": "2025-08-31T10:00:00Z" }
-  ]
+  ],
+  "portfolioGoals": {
+    "lossRatio": {
+      "value": 48.2,
+      "target": 55
+    },
+    "renewalRetention": {
+      "value": 88,
+      "targetMin": 85,
+      "targetMax": 90
+    },
+    "newBusiness": {
+      "value": 8.1,
+      "target": 12
+    },
+    "annualGWP": {
+      "value": 28.4,
+      "target": 42
+    }
+  }
 }

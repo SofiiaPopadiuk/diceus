@@ -3,19 +3,22 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../../core/services/api.service';
 import { WorkQueue } from './components/work-queue/work-queue';
 import { AsyncPipe } from '@angular/common';
+import { PortfolioGoals } from './components/portfolio-goals/portfolio-goals';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [WorkQueue, AsyncPipe],
+  imports: [WorkQueue, AsyncPipe, PortfolioGoals],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
 export class Dashboard {
   workQueue$!: Observable<any>;
+  portfolioGoals$!: Observable<any>;
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.workQueue$ = this.api.get('workQueue');
+    this.portfolioGoals$ = this.api.get('portfolioGoals');
   }
 }
