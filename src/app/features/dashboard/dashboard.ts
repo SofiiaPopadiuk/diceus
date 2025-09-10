@@ -4,10 +4,11 @@ import { ApiService } from '../../core/services/api.service';
 import { WorkQueue } from './components/work-queue/work-queue';
 import { AsyncPipe } from '@angular/common';
 import { PortfolioGoals } from './components/portfolio-goals/portfolio-goals';
+import { QuickActions } from './components/quick-actions/quick-actions';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [WorkQueue, AsyncPipe, PortfolioGoals],
+  imports: [WorkQueue, AsyncPipe, PortfolioGoals, QuickActions],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
