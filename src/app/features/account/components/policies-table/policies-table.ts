@@ -31,10 +31,12 @@ export class PoliciesTable {
     renevalToTech: ['', Validators.required],
     renevalTech: ['', Validators.required],
     renevalPremium: ['', Validators.required],
-    rate: ['', Validators.required],
-    loss: ['', Validators.required],
+    rate: [null],
+    loss: [null],
   }));
   showAddForm = signal(false);
+  editMode = signal(false);
+  editingPolicyId = signal<number | null>(null);
 
   getAvg(field: string, filterNull = false): number {
     const policies = this.policies() ?? [];
@@ -63,17 +65,52 @@ export class PoliciesTable {
   }
 
   savePolicy() {
-    if (this.addForm()?.valid) {
-      this.api.post('policies', this.addForm()?.value).pipe(take(1)).subscribe(() => this.policyAdded.emit());
-      this.addForm()?.reset();
+    if (this.addForm().valid) {
+      if (this.editMode()) {
+        // update existing policy
+        this.api
+          .put(`policies/${this.editingPolicyId()}`, this.addForm().value)
+          .pipe(take(1))
+          .subscribe(() => this.policyAdded.emit());
+      } else {
+        // create new policy
+        this.api
+          .post('policies', this.addForm().value)
+          .pipe(take(1))
+          .subscribe(() => this.policyAdded.emit());
+      }
+
+      this.addForm().reset();
       this.showAddForm.set(false);
+      this.editMode.set(false);
+      this.editingPolicyId.set(null);
     }
   }
 
   cancelAdd() {
-    this.addForm()?.reset();
+    this.addForm().reset();
     this.showAddForm.set(false);
+    this.editMode.set(false);
+    this.editingPolicyId.set(null);
   }
 
-  editPolicy() {}
+  editPolicy(policy: any) {
+    const formatted = {
+      ...policy,
+      effective: this.formatDate(policy.effective),
+      expiration: this.formatDate(policy.expiration)
+    };
+    this.addForm().patchValue(formatted); // prefill with existing data
+    this.editMode.set(true);
+    this.editingPolicyId.set(policy.id);
+  }
+
+  isEditing(id: number): boolean {
+    return this.editMode() && this.editingPolicyId() === id;
+  }
+
+  private formatDate(date: string | Date): string {
+    const d = new Date(date);
+    return d.toISOString().split('T')[0]; // → "2025-09-01"
+  }
 }

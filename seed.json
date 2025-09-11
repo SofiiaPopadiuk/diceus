@@ -24,18 +24,18 @@
       "loss": "22"
     },
     {
-      "id": "5002",
       "line": "Property",
+      "effective": "2025-08-31",
+      "expiration": "2026-08-30",
       "status": "Active",
-      "effective": "2025/09/01",
-      "expiration": "2026/08/31",
       "expTech": "475000",
       "expPremium": "490000",
       "renevalToTech": "495000",
       "renevalTech": "500000",
-      "renevalPremium": "505000",
+      "renevalPremium": 505001,
       "rate": null,
-      "loss": "18"
+      "loss": "18",
+      "id": "5002"
     },
     {
       "id": "5003",
@@ -78,6 +78,20 @@
       "renevalPremium": "305000",
       "rate": "2.9",
       "loss": "75"
+    },
+    {
+      "line": "sofiia",
+      "effective": "2025-09-13",
+      "expiration": "2025-09-03",
+      "status": "Pending",
+      "expTech": 122,
+      "expPremium": 1212,
+      "renevalToTech": 3231,
+      "renevalTech": 212000,
+      "renevalPremium": 2312,
+      "rate": 10,
+      "loss": null,
+      "id": "8c3a"
     }
   ],
   "workQueue": [
