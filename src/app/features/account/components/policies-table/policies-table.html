@@ -1,0 +1,80 @@
+<app-card>  
+  <table class="policies-table">
+    <thead>
+      <tr>
+        <th>Line</th>
+        <th>Eff. Date</th>
+        <th>Exp. Date</th>
+        <th>Status</th>
+        <th>Expiring tech</th>
+        <th>Expiring premium</th>
+        <th>Renewal to tech</th>
+        <th>Renewal tech</th>
+        <th>Renewal premium</th>
+        <th>Rate change</th>
+        <th>Loss ratio</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of policies(); track $index; let index = $index) {
+        <!-- !== 0 because index starts from 0 -->
+        <tr class="row" [class.even]="index % 2 !== 0">
+          <td class="line">{{ item?.line }}</td>
+          <td class="effective">{{ item?.effective }}</td>
+          <td class="expiration">{{ item?.expiration }}</td>
+          <td>
+            <i
+              class="fa fa-circle circle"
+              [ngStyle]="{ color: item?.status | policyStatusColor: 'color' }"
+            ></i>
+            <span>{{ item?.status }}</span>
+          </td>
+          <td class="expTech">${{ (item?.expTech ?? 0) | number:'1.0-0':'en' }}</td>
+          <td class="expPremium">${{ (item?.expPremium ?? 0) | number:'1.0-0':'en' }}</td>
+          <td class="renevalToTech">${{ (item?.renevalToTech ?? 0) | number:'1.0-0':'en' }}</td>
+          <td class="renevalTech">${{ (item?.renevalTech ?? 0) | number:'1.0-0':'en' }}</td>
+          <td class="renevalPremium">${{ (item?.renevalPremium ?? 0) | number:'1.0-0':'en' }}</td>
+          <td class="rate" [class.bad-rate]="item?.rate > 5">{{ item?.rate ? item?.rate + '%' : 'N/A' }}</td>
+          <td class="loss">
+            <div [ngClass]="{
+              'loss-data__not-exist': !item?.loss,
+              'loss-data': item?.loss,
+              'loss-data__bad': item?.loss && item?.loss >= 70,
+              'loss-data__medium': item?.loss && item?.loss >= 50 && item?.loss < 70,
+              'loss-data__good':  item?.loss && item?.loss >= 0 && item?.loss < 50
+            }">            
+              {{ item?.loss ? item?.loss + '%' : 'N/A' }}
+            </div>
+          </td>
+          <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+        </tr>
+      }
+    </tbody>
+    <tfoot>
+      <tr class="row" [class.even]="policies().length % 2 !== 0">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="highlight">Total ({{ policies().length }})</td>
+        <td class="highlight">${{ getAvg('expTech') | number:'1.0-0':'en' }}</td>
+        <td class="highlight">${{ getAvg('expPremium') | number:'1.0-0':'en' }}</td>
+        <td class="highlight">${{ getAvg('renevalToTech') | number:'1.0-0':'en' }}</td>
+        <td class="highlight">${{ getAvg('renevalTech') | number:'1.0-0':'en' }}</td>
+        <td class="highlight">${{ getAvg('renevalPremium') | number:'1.0-0':'en' }}</td>
+        <td>{{ getAvg('rate', true) }}%</td>
+        <td>
+          <div [ngClass]="{
+            'loss-data__not-exist': !lossAvg(),
+            'loss-data': lossAvg(),
+            'loss-data__bad': lossAvg() && lossAvg() >= 70,
+            'loss-data__medium': lossAvg() && lossAvg() >= 50 && lossAvg() < 70,
+            'loss-data__good':  lossAvg() && lossAvg() >= 0 && lossAvg() < 50
+          }">            
+            {{ lossAvg() ? lossAvg() + '%' : 'N/A' }}
+          </div>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</app-card>

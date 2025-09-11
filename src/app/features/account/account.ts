@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PoliciesTable } from './components/policies-table/policies-table';
+import { Observable } from 'rxjs';
+import { ApiService } from '../../core/services/api.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-account',
-  imports: [],
+  imports: [PoliciesTable, AsyncPipe],
   templateUrl: './account.html',
   styleUrl: './account.scss'
 })
 export class Account {
-  account: any;
+  route = inject(ActivatedRoute);
+  api = inject(ApiService);
 
-  constructor(private route: ActivatedRoute) {}
+  account: any;
+  policies$!: Observable<any>;
 
   ngOnInit(): void {
     this.account = this.route.snapshot.data['account']; // resolved data
+    this.policies$ = this.api.get('policies');
   }
 }

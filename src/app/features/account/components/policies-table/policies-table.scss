@@ -1,0 +1,70 @@
+:host { 
+  .policies-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px 12px;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 12px;
+      color: #94a3b8;
+      background-color: #252a3d;
+      text-transform: uppercase;
+      padding: 6px 12px;
+    }
+    
+    td {
+      font-size: 14px;
+      vertical-align: top;
+      color: #e5e7eb;
+    }
+
+    .row.even {
+      background-color: #252a3d;
+      border-bottom: 1px solid #293245;
+      border-top: 1px solid #293245;
+    }
+
+    .circle {
+      font-size: 10px;
+      margin-right: 4px;
+    }
+
+    .bad-rate {
+      color: #b93b3b;
+    }
+
+    .loss-data {
+      padding: 4px;
+      width: 40px;
+      text-align: center;
+      border-radius: 12px;
+      color: white;
+      font-size: 12px;
+
+      &__good {
+        background: #3bb979;
+      }
+
+      &__medium {
+        background: #fdd261;
+        color: black;
+      }
+
+      &__bad {
+        background: #b93b3b;
+      }
+    }
+
+    .renevalPremium,
+    .highlight {
+      font-weight: bold;
+      color: white;
+    }
+  }
+}

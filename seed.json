@@ -3,7 +3,11 @@
     { "id": 101, "name": "Acme GmbH", "status": "Active", "segment": "MidMarket", "owner": "Jane Doe" }
   ],
   "policies": [
-    { "id": 5001, "accountId": 101, "policyNo": "PL-2025-0001", "lob": "Property", "premium": 12500, "status": "Active", "effective": "2025-09-01", "expiration": "2026-08-31" }
+    { "id": 5001, "line": "Marine Cargo", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "587500", "expPremium": "605000", "renevalToTech": "610000", "renevalTech": "620000", "renevalPremium": "625000", "rate": "3.3", "loss": "22" },
+    { "id": 5002, "line": "Property", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "475000", "expPremium": "490000", "renevalToTech": "495000", "renevalTech": "500000", "renevalPremium": "505000", "rate": null, "loss": "18" },
+    { "id": 5003, "line": "Liability", "status": "Pending", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "350000", "expPremium": "360000", "renevalToTech": "365000", "renevalTech": "370000", "renevalPremium": "375000", "rate": "3.1", "loss": "53" },
+    { "id": 5004, "line": "Motor Vehicle", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "620000", "expPremium": "635000", "renevalToTech": "640000", "renevalTech": "650000", "renevalPremium": "655000", "rate": "5.5", "loss": null },
+    { "id": 5005, "line": "Engineering", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "280000", "expPremium": "290000", "renevalToTech": "295000", "renevalTech": "300000", "renevalPremium": "305000", "rate": "2.9", "loss": "75" }
   ],
   "workQueue": [
     { "id": 1, "originator": "Alice", "client": "Acme GmbH", "line": "Cyber Liability", "type": "Submission Review", "status": "New", "created": "2025-09-10" },

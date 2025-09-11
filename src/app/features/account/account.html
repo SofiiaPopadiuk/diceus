@@ -1,1 +1,3 @@
-<p>account works!</p>
+<div>Resolved account: <span class="name">{{ account?.name }}</span></div>
+<div class="section-title">Policies</div>
+<app-policies-table [policies]="policies$ | async"></app-policies-table>

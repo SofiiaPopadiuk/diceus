@@ -1,12 +1,12 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { WorkItem } from '../../../../core/interfaces/dashboard.interfaces';
 import { Card } from '../../../../shared/card/card';
-import { StatusColorPipe } from '../../../../core/pipes/status-color.pipe';
+import { TaskStatusColorPipe } from '../../../../core/pipes/task-status-color.pipe';
 import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-work-queue',
-  imports: [Card, StatusColorPipe, NgStyle],
+  imports: [Card, TaskStatusColorPipe, NgStyle],
   templateUrl: './work-queue.html',
   styleUrl: './work-queue.scss'
 })

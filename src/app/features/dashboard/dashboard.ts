@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../core/services/api.service';
 import { WorkQueue } from './components/work-queue/work-queue';
@@ -14,10 +14,10 @@ import { MarketIntelligence } from './components/market-intelligence/market-inte
   styleUrl: './dashboard.scss'
 })
 export class Dashboard {
+  api = inject(ApiService);
+
   workQueue$!: Observable<any>;
   portfolioGoals$!: Observable<any>;
-
-  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.workQueue$ = this.api.get('workQueue');

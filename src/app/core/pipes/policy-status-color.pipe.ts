@@ -1,22 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'statusColor' })
-export class StatusColorPipe implements PipeTransform {
+@Pipe({ name: 'policyStatusColor' })
+export class PolicyStatusColorPipe implements PipeTransform {
   statuses = [
     {
-      name: 'New',
-      color: '#3b82f6',
-      class: 'new',
+      name: 'Active',
+      color: '#3bb979',
+      class: 'active',
     },
     {
-      name: 'Pending Review',
+      name: 'Pending',
       color: '#fdd261',
       class: 'pendind',
-    },
-    {
-      name: 'Completed',
-      color: '#3bb979',
-      class: 'completed',
     },
   ];
 
