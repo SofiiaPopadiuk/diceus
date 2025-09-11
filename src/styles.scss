@@ -1,6 +1,16 @@
+@use '@angular/material' as mat;
+
 body {
   font-family: sans-serif;
   padding: 12px 24px;
   background: rgb(18, 22, 34);
   color: #fff;
+}
+
+:root {
+  @include mat.menu-overrides((
+    container-color: white,
+    item-label-text-color: black,
+    item-hover-state-layer-color: #29324514
+  ));
 }

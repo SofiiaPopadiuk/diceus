@@ -66,5 +66,18 @@
       font-weight: bold;
       color: white;
     }
+
+    input {
+      width: 80px;
+    }
+
+    .small-input {
+      width: 40px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
   }
 }

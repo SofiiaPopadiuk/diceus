@@ -17,6 +17,30 @@
       </tr>
     </thead>
     <tbody>
+      <tr *ngIf="showAddForm()" class="row new-policy-row" [formGroup]="addForm()">
+        <td><input type="text" formControlName="line" /></td>
+        <td><input type="date" formControlName="effective" /></td>
+        <td><input type="date" formControlName="expiration" /></td>
+        <td>
+          <select formControlName="status">
+            <option value="Active">Active</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </td>
+        <td><input type="number" formControlName="expTech" /></td>
+        <td><input type="number" formControlName="expPremium" /></td>
+        <td><input type="number" formControlName="renevalToTech" /></td>
+        <td><input type="number" formControlName="renevalTech" /></td>
+        <td><input type="number" formControlName="renevalPremium" /></td>
+        <td><input type="number" class="small-input" formControlName="rate" /></td>
+        <td><input type="number" class="small-input" formControlName="loss" /></td>
+        <td class="actions">
+          <i class="fa-solid fa-check" (click)="savePolicy()"></i>
+          <i class="fa-solid fa-xmark" (click)="cancelAdd()"></i>
+        </td>
+      </tr>
+         
+
       @for (item of policies(); track $index; let index = $index) {
         <!-- !== 0 because index starts from 0 -->
         <tr class="row" [class.even]="index % 2 !== 0">
@@ -47,7 +71,12 @@
               {{ item?.loss ? item?.loss + '%' : 'N/A' }}
             </div>
           </td>
-          <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          <td>
+            <i class="fa-solid fa-ellipsis-vertical" [matMenuTriggerFor]="menu"></i></td>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="addPolicy()">Add policy</button>
+              <button mat-menu-item (click)="editPolicy()">Edit policy</button>
+            </mat-menu>
         </tr>
       }
     </tbody>

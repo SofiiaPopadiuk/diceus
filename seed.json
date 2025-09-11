@@ -1,30 +1,202 @@
 {
   "accounts": [
-    { "id": 101, "name": "Acme GmbH", "status": "Active", "segment": "MidMarket", "owner": "Jane Doe" }
+    {
+      "id": "101",
+      "name": "Acme GmbH",
+      "status": "Active",
+      "segment": "MidMarket",
+      "owner": "Jane Doe"
+    }
   ],
   "policies": [
-    { "id": 5001, "line": "Marine Cargo", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "587500", "expPremium": "605000", "renevalToTech": "610000", "renevalTech": "620000", "renevalPremium": "625000", "rate": "3.3", "loss": "22" },
-    { "id": 5002, "line": "Property", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "475000", "expPremium": "490000", "renevalToTech": "495000", "renevalTech": "500000", "renevalPremium": "505000", "rate": null, "loss": "18" },
-    { "id": 5003, "line": "Liability", "status": "Pending", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "350000", "expPremium": "360000", "renevalToTech": "365000", "renevalTech": "370000", "renevalPremium": "375000", "rate": "3.1", "loss": "53" },
-    { "id": 5004, "line": "Motor Vehicle", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "620000", "expPremium": "635000", "renevalToTech": "640000", "renevalTech": "650000", "renevalPremium": "655000", "rate": "5.5", "loss": null },
-    { "id": 5005, "line": "Engineering", "status": "Active", "effective": "2025/09/01", "expiration": "2026/08/31", "expTech": "280000", "expPremium": "290000", "renevalToTech": "295000", "renevalTech": "300000", "renevalPremium": "305000", "rate": "2.9", "loss": "75" }
+    {
+      "id": "5001",
+      "line": "Marine Cargo",
+      "status": "Active",
+      "effective": "2025/09/01",
+      "expiration": "2026/08/31",
+      "expTech": "587500",
+      "expPremium": "605000",
+      "renevalToTech": "610000",
+      "renevalTech": "620000",
+      "renevalPremium": "625000",
+      "rate": "3.3",
+      "loss": "22"
+    },
+    {
+      "id": "5002",
+      "line": "Property",
+      "status": "Active",
+      "effective": "2025/09/01",
+      "expiration": "2026/08/31",
+      "expTech": "475000",
+      "expPremium": "490000",
+      "renevalToTech": "495000",
+      "renevalTech": "500000",
+      "renevalPremium": "505000",
+      "rate": null,
+      "loss": "18"
+    },
+    {
+      "id": "5003",
+      "line": "Liability",
+      "status": "Pending",
+      "effective": "2025/09/01",
+      "expiration": "2026/08/31",
+      "expTech": "350000",
+      "expPremium": "360000",
+      "renevalToTech": "365000",
+      "renevalTech": "370000",
+      "renevalPremium": "375000",
+      "rate": "3.1",
+      "loss": "53"
+    },
+    {
+      "id": "5004",
+      "line": "Motor Vehicle",
+      "status": "Active",
+      "effective": "2025/09/01",
+      "expiration": "2026/08/31",
+      "expTech": "620000",
+      "expPremium": "635000",
+      "renevalToTech": "640000",
+      "renevalTech": "650000",
+      "renevalPremium": "655000",
+      "rate": "5.5",
+      "loss": null
+    },
+    {
+      "id": "5005",
+      "line": "Engineering",
+      "status": "Active",
+      "effective": "2025/09/01",
+      "expiration": "2026/08/31",
+      "expTech": "280000",
+      "expPremium": "290000",
+      "renevalToTech": "295000",
+      "renevalTech": "300000",
+      "renevalPremium": "305000",
+      "rate": "2.9",
+      "loss": "75"
+    }
   ],
   "workQueue": [
-    { "id": 1, "originator": "Alice", "client": "Acme GmbH", "line": "Cyber Liability", "type": "Submission Review", "status": "New", "created": "2025-09-10" },
-    { "id": 2, "originator": "Bob", "client": "Beta Corp", "line": "Marine Cargo", "type": "Document Approval", "status": "Pending Review", "created": "2025-09-12" },
-    { "id": 3, "originator": "Charlie", "client": "Gamma Ltd", "line": "Environmental", "type": "Risk Assessment", "status": "Completed", "created": "2025-09-15" },
-    { "id": 4, "originator": "Diana", "client": "Delta Inc", "line": "Cyber Liability", "type": "Submission Review", "status": "New", "created": "2025-09-11" },
-    { "id": 5, "originator": "Ethan", "client": "Epsilon Co", "line": "Product Liability", "type": "Compliance Check", "status": "Pending Review", "created": "2025-09-14" },
-    { "id": 6, "originator": "Fiona", "client": "Zeta LLC", "line": "D&O Liability", "type": "Document Approval", "status": "Completed", "created": "2025-09-16" },
-    { "id": 7, "originator": "George", "client": "Eta GmbH", "line": "Environmental", "type": "Risk Assessment", "status": "New", "created": "2025-09-13" },
-    { "id": 8, "originator": "Hannah", "client": "Theta Ltd", "line": "Marine Cargo", "type": "Submission Review", "status": "Pending Review", "created": "2025-09-17" },
-    { "id": 9, "originator": "Ian", "client": "Iota Corp", "line": "Cyber Liability", "type": "Compliance Check", "status": "Completed", "created": "2025-09-18" },
-    { "id": 10, "originator": "Julia", "client": "Kappa Inc", "line": "Marine Cargo", "type": "Document Approval", "status": "New", "created": "2025-09-19" },
-    { "id": 11, "originator": "Kevin", "client": "Lambda LLC", "line": "Product Liability", "type": "Risk Assessment", "status": "Pending Review", "created": "2025-09-20" },
-    { "id": 12, "originator": "Laura", "client": "Mu GmbH", "line": "Medical Malpractise", "type": "Submission Review", "status": "Completed", "created": "2025-09-21" }
+    {
+      "id": "1",
+      "originator": "Alice",
+      "client": "Acme GmbH",
+      "line": "Cyber Liability",
+      "type": "Submission Review",
+      "status": "New",
+      "created": "2025-09-10"
+    },
+    {
+      "id": "2",
+      "originator": "Bob",
+      "client": "Beta Corp",
+      "line": "Marine Cargo",
+      "type": "Document Approval",
+      "status": "Pending Review",
+      "created": "2025-09-12"
+    },
+    {
+      "id": "3",
+      "originator": "Charlie",
+      "client": "Gamma Ltd",
+      "line": "Environmental",
+      "type": "Risk Assessment",
+      "status": "Completed",
+      "created": "2025-09-15"
+    },
+    {
+      "id": "4",
+      "originator": "Diana",
+      "client": "Delta Inc",
+      "line": "Cyber Liability",
+      "type": "Submission Review",
+      "status": "New",
+      "created": "2025-09-11"
+    },
+    {
+      "id": "5",
+      "originator": "Ethan",
+      "client": "Epsilon Co",
+      "line": "Product Liability",
+      "type": "Compliance Check",
+      "status": "Pending Review",
+      "created": "2025-09-14"
+    },
+    {
+      "id": "6",
+      "originator": "Fiona",
+      "client": "Zeta LLC",
+      "line": "D&O Liability",
+      "type": "Document Approval",
+      "status": "Completed",
+      "created": "2025-09-16"
+    },
+    {
+      "id": "7",
+      "originator": "George",
+      "client": "Eta GmbH",
+      "line": "Environmental",
+      "type": "Risk Assessment",
+      "status": "New",
+      "created": "2025-09-13"
+    },
+    {
+      "id": "8",
+      "originator": "Hannah",
+      "client": "Theta Ltd",
+      "line": "Marine Cargo",
+      "type": "Submission Review",
+      "status": "Pending Review",
+      "created": "2025-09-17"
+    },
+    {
+      "id": "9",
+      "originator": "Ian",
+      "client": "Iota Corp",
+      "line": "Cyber Liability",
+      "type": "Compliance Check",
+      "status": "Completed",
+      "created": "2025-09-18"
+    },
+    {
+      "id": "10",
+      "originator": "Julia",
+      "client": "Kappa Inc",
+      "line": "Marine Cargo",
+      "type": "Document Approval",
+      "status": "New",
+      "created": "2025-09-19"
+    },
+    {
+      "id": "11",
+      "originator": "Kevin",
+      "client": "Lambda LLC",
+      "line": "Product Liability",
+      "type": "Risk Assessment",
+      "status": "Pending Review",
+      "created": "2025-09-20"
+    },
+    {
+      "id": "12",
+      "originator": "Laura",
+      "client": "Mu GmbH",
+      "line": "Medical Malpractise",
+      "type": "Submission Review",
+      "status": "Completed",
+      "created": "2025-09-21"
+    }
   ],
   "news": [
-    { "id": 1, "title": "Reinsurance rates trend up", "source": "MarketWatch", "publishedAt": "2025-08-31T10:00:00Z" }
+    {
+      "id": "1",
+      "title": "Reinsurance rates trend up",
+      "source": "MarketWatch",
+      "publishedAt": "2025-08-31T10:00:00Z"
+    }
   ],
   "portfolioGoals": {
     "lossRatio": {

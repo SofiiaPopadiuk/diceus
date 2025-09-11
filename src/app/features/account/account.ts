@@ -22,4 +22,8 @@ export class Account {
     this.account = this.route.snapshot.data['account']; // resolved data
     this.policies$ = this.api.get('policies');
   }
+
+  updatePolicies() {
+    this.policies$ = this.api.get('policies');
+  }
 }
