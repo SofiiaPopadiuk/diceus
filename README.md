@@ -10,6 +10,10 @@ Vars and mixins for SCSS
 
 Unit tests
 
+Responsive styles, add loaders
+
+Use correct account id (not hardcoded /account/101)
+
 ## How is it working
 
 https://github.com/user-attachments/assets/84566f6b-7222-4412-a318-527331d1acee
